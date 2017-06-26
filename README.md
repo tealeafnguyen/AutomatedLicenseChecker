@@ -23,6 +23,9 @@ were added to the build path when starting the project.
 The email class has had it's username and password removed for the sake of privacy; 
 please enter your own account into the file.
 
+The program is under the assumption the document follows the format license name at column 0 and active date on either
+column 2 or 4. The dates are expected to be in MM-dd-yyyy format.
+
 
 ==============Compiling and running======================
 
