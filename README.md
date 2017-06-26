@@ -20,6 +20,9 @@ log4j-1.2.17
 Some dependencies are not used in the project, but these are all these dependencies that
 were added to the build path when starting the project.
 
+The email class has had it's username and password removed for the sake of privacy; 
+please enter your own account into the file.
+
 
 ==============Compiling and running======================
 
@@ -31,7 +34,7 @@ javac -d bin src/*.java
 
 To run the program
 
-java Controller
+java Controller 'Document Name Here'
 
 
 =============Initial Changes=============================
