@@ -2,21 +2,21 @@ import java.text.*;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.Date;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
 
 public class DayCounter {
 
-	public static void count(){ //Change this to accept array lists of the license names and dates
+	public static void count(ArrayList<String> names, ArrayList<String> dates){ //Change this to accept array lists of the license names and dates
 		long  nearingExpiration = 30; // counts within 31 days due to rounding up when calculating difference between days
 		Date testDate = null;
 		String message = "";
-		String[] dates = {"07/15/2017","07/25/2017","07/23/2017","06/24/2017"};
 
-		for(int x = 0; x < dates.length; x++){
+		for(int x = 0; x < dates.size(); x++){
 			try{
-				testDate = testFun(dates[x]);
+				testDate = testFun(dates.get(x));
 			}
 			catch(ParseException e){
 				System.out.println("Error parsing document dates");
@@ -28,7 +28,7 @@ public class DayCounter {
 			long delta = deltaDay(currDate, testDate);
 
 			if(delta <= nearingExpiration && delta >= -1){ 
-				String temp = message + "#Liscense name here#" + " expires in " + String.valueOf(delta+1) + " day(s)\n";
+				String temp = message + names.get(x) + " expires in " + String.valueOf(delta+1) + " day(s)\n";
 				message = temp;
 			}
 		}
