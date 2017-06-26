@@ -73,6 +73,9 @@ public class FileReader {
 			 * Having some issue with the CMW2 Lic sheet, getting null pointer exception
 			 */
 			//secondSheet(licenseNames, expiryDate, file);
+			
+			DayCounter dc = new DayCounter();
+			dc.count(licenseNames, expiryDate);
 		} catch(Exception ioe) {
 			ioe.printStackTrace();
 		}
